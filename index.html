@@ -108,6 +108,34 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
   height: auto !important;
   display: block;
   margin: 0 auto 20px;
+       .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(230,217,162,0.12),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.card {
+  position: relative;
+.divider {
+  width: 60px;
+  height: 1px;
+  margin: 28px auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(230,217,162,0.8),
+    transparent
+  );
+
+
+
 
 
 
@@ -136,7 +164,7 @@ body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relati
     <a class="button" href="https://www.tiktok.com/@joyashermanascol?_r=1&amp;_t=ZM-92LL8gp6FBI">TIKTOK</a>
 
     <div class="footer">
-      ENVÍOS NACIONALES E INTERNACIONALES<br>
+      ENVÍOS NACIONALES E INTERNACIONALES✈🌎    
       GARANTÍA HASTA 4 AÑOS
     </div>
 
