@@ -1,174 +1,252 @@
-<html lang="es"><head><style>body {transition: opacity ease-in 0.2s; } 
-body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
-</style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JoyasHermanas</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title> </title>| Alta Joyería</title>
+  <link rel="icon" href="data:,">
 
-  <!-- Tipografía elegante -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&amp;display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fuente elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #111 0%, #000 60%);
-      font-family: 'Playfair Display', serif;
-      color: #e6d9a2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card {
-     
-      max-width: 420px;
-      padding: 50px 35px;
-      text-align: center;
-      background: rgba(0,0,0,0.55);
-      border: 1px solid rgba(230,217,162,0.25);
-      border-radius: 22px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    }
-
-    .logo {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto 25px;
-      border-radius: 50%;
-      border: 1px solid rgba(230,217,162,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      letter-spacing: 2px;
-      .logo-img {
- 
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 18px;
-
-
+      padding: 0;
+      box-sizing: border-box;
+      .footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(245, 230, 200, 0.6);
+  font-family: 'Playfair Display', serif;
 }
 
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      color: #e6d9b8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* VIDEO DE FONDO */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      @media (max-width: 768px) {
+  #video-bg {
+    object-fit: contain;
+    background-color: #000; /* evita bordes feos */
+  }
+}
+
+    }
+
+    /* CAPA OSCURA PARA LEER BIEN */
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 18, 14, 0.65);
+      z-index: -1;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    /* LOGO */
+    .logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(230,217,184,0.5);
+      margin-bottom: 20px;
     }
 
     h1 {
-      margin: 0;
-      font-size: 30px;
-      letter-spacing: 3px;
-      font-weight: 600;
+      font-size: 42px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
-      margin-top: 10px;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+      color: #d6caa5;
+    }
+
+    /* GALERÍA */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .item {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(230,217,184,0.25);
+      border-radius: 18px;
+      padding: 15px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-6px);
+    }
+
+    .item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .item p {
+      margin-top: 12px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* BOTÓN CATÁLOGO */
+    .catalogo {
+      display: inline-block;
+      margin-bottom: 40px;
+      padding: 14px 38px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #111;
+      background: linear-gradient(135deg, #e6d9b8, #cdbb8a);
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .catalogo:hover {
+      transform: scale(1.05);
+    }
+
+    /* REDES */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #e6d9b8;
+      border: 1px solid rgba(230,217,184,0.4);
+      padding: 10px 22px;
+      border-radius: 30px;
       font-size: 13px;
       letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(230,217,162,0.75);
+      transition: all 0.3s ease;
     }
 
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: rgba(230,217,162,0.4);
-      margin: 30px auto;
+    .socials a:hover {
+      background: rgba(230,217,184,0.15);
     }
 
-    a.button {
-      display: block;
-      padding: 16px;
-      margin: 14px 0;
-      text-decoration: none;
-      color: #e6d9a2;
-      border: 1px solid rgba(230,217,162,0.35);
-      border-radius: 14px;
-      font-size: 15px;
-      letter-spacing: 1.5px;
-      transition: all 0.35s ease;
-    }
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
 
-    a.button:hover {
-      background: #e6d9a2;
-      color: #000;
-    }
-
-    .footer {
-      margin-top: 35px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      color: rgba(230,217,162,0.6);
-     .logo-img {
-  width: 90px !important;
-  max-width: 90px !important;
-  height: auto !important;
-  display: block;
-  margin: 0 auto 20px;
-       .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(230,217,162,0.12),
-    transparent 70%
-  );
-  pointer-events: none;
-}
-.card {
-  position: relative;
-.divider {
-  width: 60px;
-  height: 1px;
-  margin: 28px auto;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(230,217,162,0.8),
-    transparent
-  );
-
-
-
-
-
-
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
     }
   </style>
+</head>
+ 
 
-
-
-<style type="text/css" id="operaUserStyle"></style><style id="NjQwMDAwMDE5OTk5OTY3"></style><script type="text/javascript" charset="utf-8" defer="" async="" src="chrome-extension://ohahgichchibmnlgekkfobeenmoiagpk/inject-scripts/patch-xhr.js" data-params="{}"></script><style type="text/css"></style></head>
 
 <body>
-  <div class="card">
 
-    <!-- LOGO (puedes cambiar por imagen luego) -->
-  <img src="fbaa0726-010a-4872-a3c7-a3a5870a2323.jpg" style="width:80px; max-width:80px; height:auto; display:block; margin:0 auto 20px;">
+  <!-- VIDEO -->
+ <video
+  class="video-bg"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  disablepictureinpicture
+  controls="false">
+  <source src="anillo.mp4" type="video/mp4">
+</video>
 
+  </video>
 
-    <h1>JoyasHermanas</h1>
-    <div class="subtitle">ORO LAMINADO 18K · Plata-moissanita</div>
+  <div class="video-overlay"></div>
 
-    <div class="divider"></div>
+  <!-- CONTENIDO -->
+  <div class="container">
 
-    <a class="button" href="https://wa.link/gljkhn">CONSULTORÍA WHATSAPP</a>
-    <a class="button" href="https://docs.google.com/document/d/1URLZR6ONuEqyZan8h6TjvhkTF93zUYbqwafFGK8iYLY/edit?usp=sharing">CATÁLOGO</a>
-    <a class="button" href="https://www.instagram.com/joyas_hermanas?igsh=ZWI3dWNiN2p5ZXhw">INSTAGRAM</a>
-    <a class="button" href="https://www.tiktok.com/@joyashermanascol?_r=1&amp;_t=ZM-92LL8gp6FBI">TIKTOK</a>
+    <!-- LOGO -->
+    <img src="logo.jpg" alt="Joyas Hermanas" class="logo">
 
-    <div class="footer">
-      ENVÍOS NACIONALES E INTERNACIONALES✈🌎    
-      GARANTÍA HASTA 4 AÑOS
+    <h1>Joyas Hermanas</h1>
+    <div class="subtitle">Alta Joyería</div>
+
+    <!-- GALERÍA -->
+    <div class="gallery">
+      <div class="item">
+        <img src="joya1.jpg" alt="Joya 1">
+        <p>Anillo Moissanita</p>
+      </div>
+      <div class="item">
+        <img src="joya2.jpg" alt="Joya 2">
+        <p>Cadena Oro Laminado</p>
+      </div>
+      <div class="item">
+        <img src="joya3.jpg" alt="Joya 3">
+        <p>Pulsera Exclusiva</p>
+      </div>
+    </div>
+
+    <!-- CATÁLOGO -->
+    <a href="TU_LINK_DE_DRIVE_AQUI" class="catalogo" target="_blank">
+      Ver Catálogo Completo
+    </a>
+
+    <!-- REDES -->
+    <div class="socials">
+      <a href="https://instagram.com/TU_USUARIO" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@TU_USUARIO" target="_blank">TikTok</a>
+      <a href="https://wa.me/TU_NUMERO" target="_blank">WhatsApp</a>
     </div>
 
   </div>
+  <footer class="footer">
+   JoyasHermanas™ 2025
+</footer>
 
 
-<div id="give-freely-root-ejkiikneibegknkgimmihdpcbcedgmpo" class="give-freely-root" data-extension-id="ejkiikneibegknkgimmihdpcbcedgmpo" data-extension-name="Volume Booster" style="display: block;"></div></body></html>
+</body>
+</html>
