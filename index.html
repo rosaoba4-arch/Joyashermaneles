@@ -50,7 +50,7 @@ h1{font-size:42px;letter-spacing:2px}
   color:#d6caa5;
 }
 
-/* SECCIONES */
+/* SECCIONES PRINCIPALES */
 .sections{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -178,7 +178,7 @@ footer{
 <h1>Joyas Hermanas</h1>
 <div class="subtitle">Alta Joyería Colombiana</div>
 
-<!-- SOLO 4 SECCIONES -->
+<!-- SECCIONES -->
 <div class="sections">
   <div class="section-card" onclick="openCatalog('cadenas')">
     <img src="categoria-cadenas.jpg">
@@ -203,60 +203,39 @@ footer{
 
 <!-- CADENAS -->
 <div id="cadenas" class="catalog">
-  <div class="product">
-    <img src="cadena1.jpg">
-    <h3>Cadena 1</h3>
-    <div class="price">$---</div>
-    <a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a>
-  </div>
+  <div class="product"><img src="cadenaa.png"><h3>Cadena 1</h3><div class="115.000">$---</div><a class="COMPRAR" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+  <div class="product"><img src="cadena2.jpg"><h3>Cadena 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 </div>
 
 <!-- PULSERAS -->
 <div id="pulseras" class="catalog">
-  <div class="product">
-    <img src="pulsera1.jpg">
-    <h3>Pulsera 1</h3>
-    <div class="price">$---</div>
-    <a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a>
-  </div>
+  <div class="product"><img src="pulsera.png"><h3>Pulsera 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 </div>
 
 <!-- ANILLOS MUJER -->
 <div id="anillos-mujer" class="catalog">
-  <div class="product">
-    <img src="anillo-m1.jpg">
-    <h3>Anillo Mujer 1</h3>
-    <div class="price">$---</div>
-    <a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a>
-  </div>
+  <div class="product"><img src="anillo-m1.jpg"><h3>Anillo Mujer 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 </div>
 
 <!-- ANILLOS HOMBRE -->
 <div id="anillos-hombre" class="catalog">
-  <div class="product">
-    <img src="anillo-h1.jpg">
-    <h3>Anillo Hombre 1</h3>
-    <div class="price">$---</div>
-    <a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a>
-  </div>
+  <div class="product"><img src="anillo caballo.png"><h3>Anillo Hombre 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 </div>
 
 <div class="socials">
-  <a href="https://www.instagram.com/joyas_hermanas" target="_blank">Instagram</a>
-  <a href="https://www.tiktok.com/@joyashermanascol" target="_blank">TikTok</a>
-  <a href="https://wa.link/gljkhn" target="_blank">WhatsApp</a>
+<a href="https://www.instagram.com/joyas_hermanas" target="_blank">Instagram</a>
+<a href="https://www.tiktok.com/@joyashermanascol" target="_blank">TikTok</a>
+<a href="https://wa.link/gljkhn" target="_blank">WhatsApp</a>
 </div>
-
 </div>
 
 <footer>JoyasHermanas™ • 2026</footer>
 
 <script>
 function openCatalog(id){
-  document.querySelectorAll('.catalog').forEach(c=>c.classList.remove('active'));
-  const section = document.getElementById(id);
-  section.classList.add('active');
-  window.scrollTo({top: section.offsetTop - 60, behavior: 'smooth'});
+  document.querySelectorAll('.catalog').forEach(c=>c.classList.remove('active'))
+  document.getElementById(id).classList.add('active')
+  window.scrollTo({top:document.getElementById(id).offsetTop-60,behavior:'smooth'})
 }
 </script>
 
