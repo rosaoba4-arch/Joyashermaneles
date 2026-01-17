@@ -33,7 +33,6 @@ body{
   z-index:-1;
 }
 
-/* CONTENEDOR */
 .container{
   max-width:1200px;
   margin:auto;
@@ -43,58 +42,42 @@ body{
 
 h1{font-size:42px;letter-spacing:2px}
 .subtitle{
-  margin:10px 0 60px;
+  margin:10px 0 50px;
   font-size:14px;
   letter-spacing:3px;
   text-transform:uppercase;
   color:#d6caa5;
 }
 
-/* SECCIONES PRINCIPALES */
-.sections{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  margin-bottom:80px;
-}
-
-.section-card{
-  position:relative;
-  height:280px;
-  border-radius:22px;
-  overflow:hidden;
-  cursor:pointer;
-  border:1px solid rgba(230,217,184,.3);
-}
-
-.section-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.section-card span{
-  position:absolute;
-  inset:0;
+/* FILTROS */
+.filters{
   display:flex;
-  align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,.45);
-  font-size:20px;
-  letter-spacing:3px;
-  text-transform:uppercase;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:50px;
+}
+.filters button{
+  background:transparent;
+  color:#e6d9b8;
+  border:1px solid rgba(230,217,184,.4);
+  padding:10px 22px;
+  border-radius:30px;
+  font-size:13px;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+.filters button:hover,
+.filters button.active{
+  background:rgba(230,217,184,.15);
 }
 
-/* CATÁLOGOS */
+/* CATÁLOGO */
 .catalog{
-  display:none;
+  display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
-  margin-bottom:80px;
-}
-
-.catalog.active{
-  display:grid;
+  margin-bottom:60px;
 }
 
 .product{
@@ -135,7 +118,6 @@ h1{font-size:42px;letter-spacing:2px}
   text-decoration:none;
 }
 
-/* REDES */
 .socials{
   display:flex;
   justify-content:center;
@@ -178,48 +160,39 @@ footer{
 <h1>Joyas Hermanas</h1>
 <div class="subtitle">Alta Joyería Colombiana</div>
 
-<!-- SECCIONES -->
-<div class="sections">
-  <div class="section-card" onclick="openCatalog('cadenas')">
-    <img src="categoria-cadenas.jpg">
-    <span>Cadenas</span>
-  </div>
-
-  <div class="section-card" onclick="openCatalog('pulseras')">
-    <img src="categoria-pulseras.jpg">
-    <span>Pulseras</span>
-  </div>
-
-  <div class="section-card" onclick="openCatalog('anillos-mujer')">
-    <img src="categoria-mujer.jpg">
-    <span>Anillos Mujer</span>
-  </div>
-
-  <div class="section-card" onclick="openCatalog('anillos-hombre')">
-    <img src="categoria-hombre.jpg">
-    <span>Anillos Hombre</span>
-  </div>
+<!-- FILTROS -->
+<div class="filters">
+  <button class="active" onclick="filter('all')">Todo</button>
+  <button onclick="filter('cadena')">Cadenas</button>
+  <button onclick="filter('pulsera')">Pulseras</button>
+  <button onclick="filter('anillo-mujer')">Anillos Mujer</button>
+  <button onclick="filter('anillo-hombre')">Anillos Hombre</button>
 </div>
 
-<!-- CADENAS -->
-<div id="cadenas" class="catalog">
-  <div class="product"><img src="cadenaa.png"><h3>Cadena 1</h3><div class="115.000">$---</div><a class="COMPRAR" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-  <div class="product"><img src="cadena2.jpg"><h3>Cadena 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-</div>
+<!-- CATÁLOGO -->
+<div class="catalog">
 
-<!-- PULSERAS -->
-<div id="pulseras" class="catalog">
-  <div class="product"><img src="pulsera.png"><h3>Pulsera 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-</div>
+<!-- CADENAS (6) -->
+<div class="product cadena"><img src="cadenaa.png"><h3>Cadena 1</h3><div class="115000">$---</div><a class="COMPRAR" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product cadena"><img src="cadena2.jpg"><h3>Cadena 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product cadena"><img src="cadena3.jpg"><h3>Cadena 3</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product cadena"><img src="cadena4.jpg"><h3>Cadena 4</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product cadena"><img src="cadena5.jpg"><h3>Cadena 5</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product cadena"><img src="cadena6.jpg"><h3>Cadena 6</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 
-<!-- ANILLOS MUJER -->
-<div id="anillos-mujer" class="catalog">
-  <div class="product"><img src="anillo-m1.jpg"><h3>Anillo Mujer 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-</div>
+<!-- PULSERAS (2) -->
+<div class="product pulsera"><img src="pulsera.png"><h3>Pulsera 1</h3><div class="105.000">$---</div><a class="COMPRAR" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product pulsera"><img src="pulsera2.jpg"><h3>Pulsera 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
 
-<!-- ANILLOS HOMBRE -->
-<div id="anillos-hombre" class="catalog">
-  <div class="product"><img src="anillo caballo.png"><h3>Anillo Hombre 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<!-- ANILLOS MUJER (2) -->
+<div class="product anillo-mujer"><img src="anillo-m1.jpg"><h3>Anillo Mujer 1</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product anillo-mujer"><img src="anillo-m2.jpg"><h3>Anillo Mujer 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+
+<!-- ANILLOS HOMBRE (3) -->
+<div class="product anillo-hombre"><img src="anillo caballo.png"><h3>Anillo Hombre 1</h3><div class="120.000">$---</div><a class="COMPRAR" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product anillo-hombre"><img src="anillo-h2.jpg"><h3>Anillo Hombre 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+<div class="product anillo-hombre"><img src="anillo-h3.jpg"><h3>Anillo Hombre 3</h3><div class="price">$---</div><a class="buy" href="https://wa.me/573XXXXXXXXX?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
+
 </div>
 
 <div class="socials">
@@ -232,10 +205,12 @@ footer{
 <footer>JoyasHermanas™ • 2026</footer>
 
 <script>
-function openCatalog(id){
-  document.querySelectorAll('.catalog').forEach(c=>c.classList.remove('active'))
-  document.getElementById(id).classList.add('active')
-  window.scrollTo({top:document.getElementById(id).offsetTop-60,behavior:'smooth'})
+function filter(category){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'))
+  event.target.classList.add('active')
+  document.querySelectorAll('.product').forEach(p=>{
+    p.style.display = category==='all'||p.classList.contains(category) ? 'block':'none'
+  })
 }
 </script>
 
