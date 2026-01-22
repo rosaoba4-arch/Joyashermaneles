@@ -10,142 +10,31 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:'Playfair Display',serif;
-  color:#e6d9b8;
-  overflow-x:hidden;
-}
+body{font-family:'Playfair Display',serif;color:#e6d9b8;overflow-x:hidden}
 
 /* VIDEO */
-.video-bg{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-2;
-}
-.video-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(20,18,14,.65);
-  z-index:-1;
-}
+.video-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.video-overlay{position:fixed;inset:0;background:rgba(20,18,14,.65);z-index:-1}
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 20px;
-  text-align:center;
-}
-
+.container{max-width:1200px;margin:auto;padding:80px 20px;text-align:center}
 h1{font-size:42px;letter-spacing:2px}
-.subtitle{
-  margin:10px 0 50px;
-  font-size:14px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#d6caa5;
-}
+.subtitle{margin:10px 0 50px;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#d6caa5}
 
 /* FILTROS */
-.filters{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-bottom:50px;
-}
-.filters button{
-  background:transparent;
-  color:#e6d9b8;
-  border:1px solid rgba(230,217,184,.4);
-  padding:10px 22px;
-  border-radius:30px;
-  font-size:13px;
-  letter-spacing:2px;
-  cursor:pointer;
-}
-.filters button:hover,
-.filters button.active{
-  background:rgba(230,217,184,.15);
-}
+.filters{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:50px}
+.filters button{background:transparent;color:#e6d9b8;border:1px solid rgba(230,217,184,.4);padding:10px 22px;border-radius:30px;font-size:13px;letter-spacing:2px;cursor:pointer}
+.filters button:hover,.filters button.active{background:rgba(230,217,184,.15)}
 
-/* CATÁLOGO */
-.catalog{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-  margin-bottom:60px;
-}
+.catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;margin-bottom:60px}
 
-.product{
-  background:rgba(0,0,0,.45);
-  border:1px solid rgba(230,217,184,.25);
-  border-radius:22px;
-  padding:18px;
-  backdrop-filter:blur(8px);
-}
+.product{background:rgba(0,0,0,.45);border:1px solid rgba(230,217,184,.25);border-radius:22px;padding:18px;backdrop-filter:blur(8px)}
+.product img{width:100%;height:260px;object-fit:cover;border-radius:16px;margin-bottom:14px}
+.product h3{font-size:16px;letter-spacing:1px;margin-bottom:6px}
+.price{font-size:15px;margin-bottom:14px}
 
-.product img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  border-radius:16px;
-  margin-bottom:14px;
-}
+.buy{display:inline-block;padding:10px 28px;border-radius:30px;background:linear-gradient(135deg,#e6d9b8,#cdbb8a);color:#111;font-size:13px;letter-spacing:2px;text-decoration:none}
 
-.product h3{
-  font-size:16px;
-  letter-spacing:1px;
-  margin-bottom:6px;
-}
-
-.price{
-  font-size:15px;
-  margin-bottom:14px;
-}
-
-.buy{
-  display:inline-block;
-  padding:10px 28px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#e6d9b8,#cdbb8a);
-  color:#111;
-  font-size:13px;
-  letter-spacing:2px;
-  text-decoration:none;
-}
-
-.socials{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:40px;
-}
-.socials a{
-  color:#e6d9b8;
-  border:1px solid rgba(230,217,184,.4);
-  padding:10px 22px;
-  border-radius:30px;
-  font-size:13px;
-  letter-spacing:2px;
-  text-decoration:none;
-}
-
-footer{
-  text-align:center;
-  font-size:12px;
-  letter-spacing:1px;
-  color:rgba(245,230,200,.6);
-  margin-bottom:30px;
-}
-
-@media(max-width:600px){
-  h1{font-size:32px}
-}
+footer{text-align:center;font-size:12px;letter-spacing:1px;color:rgba(245,230,200,.6);margin-bottom:30px}
 </style>
 </head>
 
@@ -160,46 +49,26 @@ footer{
 <h1>Joyas Hermanas</h1>
 <div class="subtitle">Alta Joyería Colombiana</div>
 
-<!-- FILTROS -->
 <div class="filters">
-  <button class="active" onclick="filter('all')">Todo</button>
-  <button onclick="filter('cadena')">Cadenas</button>
+  <button class="active" onclick="filter('cadena')">Cadenas</button>
   <button onclick="filter('pulsera')">Pulseras</button>
   <button onclick="filter('anillo-mujer')">Anillos Mujer</button>
   <button onclick="filter('anillo-hombre')">Anillos Hombre</button>
 </div>
 
-<!-- CATÁLOGO -->
 <div class="catalog">
 
-<!-- CADENAS (6) -->
-<div class="product cadena"><img src="cadenaa.png"><h3>Cadena tejido lazo 60cm-3mm</h3><div class="price">$115.000</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product cadena"><img src="serpiente.jpg"><h3>Cadena tejido serpiente 50cm-3mm</h3><div class="price">$115.000</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product cadena"><img src="figaro.jpg"><h3>Cadena tejido figaro 60cm-5mm</h3><div class="price">$145.000</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product cadena"><img src="cadena4.jpg"><h3>/h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product cadena"><img src="cadena5.jpg"><h3>Cadena 5</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product cadena"><img src="cadena6.jpg"><h3>Cadena 6</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-
-<!-- PULSERAS (2) -->
-<div class="product pulsera"><img src="pulsera.png"><h3>Pulsera 1</h3><div class="price">$110.000-</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product pulsera"><img src="pulsera2.jpg"><h3>Pulsera 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-
-<!-- ANILLOS MUJER (2) -->
-<div class="product anillo-mujer"><img src="anillo exclusivo.jpg"><h3>Anillo plata 925-moissanita</h3><div class="price">$130.000</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product anillo-mujer"><img src="anillo-m2.jpg"><h3>Anillo Mujer 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-
-<!-- ANILLOS HOMBRE (3) -->
-<div class="product anillo-hombre"><img src="anillo caballo.png"><h3>Anillo Hombre 1</h3><div class="120.000">$---</div><a class="COMPRAR" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product anillo-hombre"><img src="anillo-h2.jpg"><h3>Anillo Hombre 2</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-<div class="product anillo-hombre"><img src="anillo-h3.jpg"><h3>Anillo Hombre 3</h3><div class="price">$---</div><a class="buy" href="https://wa.me/+573225517787?text=¡Quiero%20comprar%20esta%20pieza!" target="_blank">Comprar</a></div>
-
+<!-- EJEMPLO CORRECTO -->
+<div class="product cadena">
+  <img src="cadenaa.png">
+  <h3>Cadena tejido lazo 60cm-3mm</h3>
+  <div class="price">$115.000</div>
+  <a class="buy" target="_blank"
+     href="https://wa.me/573225517787?text=¡Quiero%20comprar%20esta%20pieza!%0ANombre:%20Cadena%20tejido%20lazo%2060cm-3mm%0APrecio:%20$115.000%0AImagen:%20https://TU-PROYECTO.vercel.app/cadenaa.png">
+     Comprar
+  </a>
 </div>
 
-<div class="socials">
-<a href="https://www.instagram.com/joyas_hermanas" target="_blank">Instagram</a>
-<a href="https://www.tiktok.com/@joyashermanascol" target="_blank">TikTok</a>
-<a href="https://wa.link/gljkhn" target="_blank">WhatsApp</a>
-</div>
 </div>
 
 <footer>JoyasHermanas™ • 2026</footer>
@@ -209,7 +78,7 @@ function filter(category){
   document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'))
   event.target.classList.add('active')
   document.querySelectorAll('.product').forEach(p=>{
-    p.style.display = category==='all'||p.classList.contains(category) ? 'block':'none'
+    p.style.display = p.classList.contains(category) ? 'block':'none'
   })
 }
 </script>
